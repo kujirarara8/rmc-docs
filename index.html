@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>9月からのやり方</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+
+<style>
+  :root {
+    --page:      #F5F6F8;
+    --card:      #FFFFFF;
+    --ink:       #1E2A44;
+    --body:      #3D4A63;
+    --soft:      #77839B;
+    --line:      #E4E8EF;
+    --line-soft: #EEF1F5;
+
+    --blue:      #3B5FCC;
+    --blue-bg:   #EBF0FD;
+    --orange:    #E07C0C;
+    --orange-bg: #FDF1E2;
+    --green:     #2E8B57;
+    --green-bg:  #E9F6EE;
+    --red:       #C0392B;
+    --red-bg:    #FCEEEC;
+
+    --hana:   #C0392B; --hana-bg:   #FCEEEC;
+    --shiho:  #3B5FCC; --shiho-bg:  #EBF0FD;
+    --otoyo:  #2E8B57; --otoyo-bg:  #E9F6EE;
+
+    --shadow: 0 1px 3px rgba(30,42,68,.06), 0 8px 24px -10px rgba(30,42,68,.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page:#12151C; --card:#1C212B; --ink:#EDF0F6; --body:#C0C8D6; --soft:#8B95A8;
+      --line:#2E3542; --line-soft:#262C37;
+      --blue:#8AA6F0;   --blue-bg:#1E2740;
+      --orange:#F0A951; --orange-bg:#33261A;
+      --green:#79C89A;  --green-bg:#1B2E23;
+      --red:#EE8A7C;    --red-bg:#33201E;
+      --hana:#EE8A7C;   --hana-bg:#33201E;
+      --shiho:#8AA6F0;  --shiho-bg:#1E2740;
+      --otoyo:#79C89A;  --otoyo-bg:#1B2E23;
+      --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px -10px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --page:#12151C; --card:#1C212B; --ink:#EDF0F6; --body:#C0C8D6; --soft:#8B95A8;
+    --line:#2E3542; --line-soft:#262C37;
+    --blue:#8AA6F0;   --blue-bg:#1E2740;
+    --orange:#F0A951; --orange-bg:#33261A;
+    --green:#79C89A;  --green-bg:#1B2E23;
+    --red:#EE8A7C;    --red-bg:#33201E;
+    --hana:#EE8A7C;   --hana-bg:#33201E;
+    --shiho:#8AA6F0;  --shiho-bg:#1E2740;
+    --otoyo:#79C89A;  --otoyo-bg:#1B2E23;
+    --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px -10px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0; background: var(--page); color: var(--body);
+    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+    font-size: 17px; line-height: 1.95; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  .hero {
+    background: linear-gradient(115deg, #5B62C9 0%, #8B57C0 100%);
+    border-radius: 18px; padding: 46px 28px 40px; text-align: center; margin-bottom: 22px;
+  }
+  .hero .eyebrow {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 13px; font-weight: 500; letter-spacing: .22em;
+    color: rgba(255,255,255,.82); margin: 0 0 14px;
+  }
+  .hero h1 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(26px, 5.6vw, 38px);
+    color: #fff; margin: 0 0 14px; line-height: 1.35; letter-spacing: -.01em;
+  }
+  .hero p { font-size: 15px; color: rgba(255,255,255,.9); margin: 0; line-height: 1.8; }
+
+  .card {
+    background: var(--card); border-radius: 18px;
+    padding: 34px 30px; margin-bottom: 22px; box-shadow: var(--shadow);
+  }
+  h2 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(21px, 4.2vw, 26px);
+    color: var(--ink); margin: 0 0 8px; line-height: 1.4;
+  }
+  .rule { height: 3px; background: var(--blue); border-radius: 2px; margin: 0 0 26px; }
+  h3 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 18px; color: var(--ink);
+    margin: 30px 0 12px; line-height: 1.5;
+  }
+  h3:first-child { margin-top: 0; }
+  p { margin: 0 0 16px; }
+  p:last-child { margin-bottom: 0; }
+  b, strong { font-weight: 700; color: var(--ink); }
+
+  .hl { border-radius: 12px; padding: 26px 24px; text-align: center; margin: 0 0 22px; }
+  .hl.orange { background: var(--orange-bg); }
+  .hl.green  { background: var(--green-bg); }
+  .hl.red    { background: var(--red-bg); }
+  .hl .big {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(19px, 4vw, 25px); line-height: 1.5; margin: 0;
+  }
+  .hl .big + .sm { margin-top: 10px; }
+  .hl.orange .big { color: var(--orange); }
+  .hl.green .big  { color: var(--green); }
+  .hl.red .big    { color: var(--red); }
+  .hl .sm { font-size: 14.5px; color: var(--body); margin: 0; line-height: 1.85; }
+
+  .label {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 15px; color: var(--ink); margin: 0 0 12px;
+  }
+
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }
+  .box { border: 2px solid var(--line); border-radius: 12px; padding: 22px 18px; text-align: center; }
+  .box.o { border-color: var(--orange); background: var(--orange-bg); }
+  .box.b { border-color: var(--blue);   background: var(--blue-bg); }
+  .box .t {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: 19px; color: var(--ink); margin: 0 0 8px;
+  }
+  .box .d { font-size: 14.5px; color: var(--body); margin: 0; line-height: 1.8; }
+
+  .tscroll { overflow-x: auto; margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; min-width: 440px; }
+  th, td {
+    text-align: left; padding: 16px 18px;
+    border-bottom: 1px solid var(--line-soft); font-size: 15.5px;
+    vertical-align: middle; color: var(--body);
+  }
+  thead th {
+    background: var(--page); color: var(--soft);
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 14px; white-space: nowrap;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody th { font-weight: 700; color: var(--ink); white-space: nowrap; vertical-align: middle; }
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+  td.num, th.num { text-align: right; white-space: nowrap; font-weight: 700; color: var(--ink); }
+  .sub { display: block; font-size: 13.5px; color: var(--soft); margin-top: 4px; line-height: 1.7; font-weight: 400; }
+
+  .who {
+    display: inline-block;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 14px;
+    padding: 4px 14px; border-radius: 999px; white-space: nowrap;
+  }
+  .who.hana  { background: var(--hana-bg);  color: var(--hana); }
+  .who.shiho { background: var(--shiho-bg); color: var(--shiho); }
+  .who.otoyo { background: var(--otoyo-bg); color: var(--otoyo); }
+
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .kpi { border-radius: 12px; padding: 28px 22px; text-align: center; }
+  .kpi.o { background: var(--otoyo-bg); }
+  .kpi.s { background: var(--shiho-bg); }
+  .kpi .name {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: 25px; margin: 16px 0 0; line-height: 1.4;
+  }
+  .kpi.o .name { color: var(--otoyo); }
+  .kpi.s .name { color: var(--shiho); }
+
+  .steps { margin: 0; padding: 0; list-style: none; counter-reset: st; }
+  .steps li {
+    counter-increment: st; position: relative;
+    padding: 0 0 24px 44px; border-left: 2px solid var(--line); margin-left: 14px;
+  }
+  .steps li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .steps li::before {
+    content: counter(st);
+    position: absolute; left: -15px; top: 0;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--blue); color: #fff;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps li b { display: block; font-size: 17px; color: var(--ink); margin-bottom: 3px; }
+  .steps li span { font-size: 14.5px; color: var(--body); line-height: 1.8; }
+
+  .tasks { border-radius: 12px; padding: 26px 24px; margin-bottom: 16px; }
+  .tasks.o { background: var(--otoyo-bg); }
+  .tasks.s { background: var(--shiho-bg); }
+  .tasks ul { margin: 18px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px; }
+  .tasks li b {
+    display: block; font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 17px; color: var(--ink); margin-bottom: 5px; line-height: 1.55;
+  }
+  .tasks li span { color: var(--body); font-size: 14.5px; line-height: 1.8; }
+
+  .note { background: var(--page); border-radius: 12px; padding: 22px; margin-top: 22px; }
+  .note p { font-size: 15px; color: var(--body); margin: 0; }
+
+  footer {
+    text-align: center; font-size: 14px; color: var(--soft);
+    padding: 10px 20px 0; line-height: 1.9;
+  }
+
+  @media (max-width: 640px) {
+    .duo, .kpis { grid-template-columns: 1fr; }
+    .card { padding: 26px 20px; }
+    .hero { padding: 36px 20px 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">FOR RMC TEACHERS</p>
+    <h1>9月から、やり方を変えます</h1>
+    <p>担当の分け方・KPI・進め方・報酬<br>9/16の講師会議までに目を通しておいてください</p>
+  </div>
+
+  <div class="card">
+    <h2>変わるのは3つ</h2>
+    <div class="rule"></div>
+
+    <div class="hl orange">
+      <p class="big">① 期生でも担当を分ける</p>
+      <p class="sm">売上別の部屋のように</p>
+    </div>
+
+    <div class="hl orange">
+      <p class="big">② KPIを出す</p>
+    </div>
+
+    <div class="hl green" style="margin-bottom:0">
+      <p class="big">③ 報酬を明確化</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>1. 担当の分け方</h2>
+    <div class="rule"></div>
+
+    <p class="label">分け方の軸が2つになります</p>
+    <div class="duo">
+      <div class="box o">
+        <p class="t">売上別</p>
+        <p class="d">添削会／今週の1本／月報会</p>
+      </div>
+      <div class="box b">
+        <p class="t">期生別</p>
+        <p class="d">期生部屋の管理／企画</p>
+      </div>
+    </div>
+
+    <h3>期生の担当</h3>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>期生</th><th>担当</th><th>この層のいま</th></tr></thead>
+        <tbody>
+          <tr><th>1期生<span class="sub">90名</span></th><td><span class="who hana">はな</span></td><td>いちばん長く続けてくれている人たち</td></tr>
+          <tr><th>2期生・3期生<span class="sub">77名</span></th><td><span class="who shiho">しほ</span></td><td>ここが動くとサロン全体の空気が変わります</td></tr>
+          <tr><th>4期生<span class="sub">124名</span></th><td><span class="who otoyo">おとよ</span></td><td>8月に入ったばかり。<b>いちばん熱を作れる期</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>売上別の担当</h3>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>売上</th><th>担当</th></tr></thead>
+        <tbody>
+          <tr><th>0〜10万円</th><td><span class="who shiho">しほ</span></td></tr>
+          <tr><th>10〜30万円</th><td><span class="who otoyo">おとよ</span></td></tr>
+          <tr><th>30万円以上</th><td><span class="who hana">はな</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2. KPI</h2>
+    <div class="rule"></div>
+
+    <div class="kpis">
+      <div class="kpi o">
+        <span class="who otoyo">おとよ</span>
+        <p class="name">授業参加率</p>
+      </div>
+      <div class="kpi s">
+        <span class="who shiho">しほ</span>
+        <p class="name">月報提出率</p>
+      </div>
+    </div>
+
+    <h3>何の数字を取るか</h3>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>数字</th><th>出し方</th></tr></thead>
+        <tbody>
+          <tr>
+            <th>授業参加率</th>
+            <td>その月の授業・添削会の<b>平均参加人数 ÷ 会員数</b><span class="sub">会員数はいま291名</span></td>
+          </tr>
+          <tr>
+            <th>月報提出率</th>
+            <td>その月に月報を出した<b>人数 ÷ 会員数</b><span class="sub">1人1回として数えます</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>3. 進め方</h2>
+    <div class="rule"></div>
+
+    <p>数字を出して終わりではありません。<b>その数字をどう見たか、今月何をやるか</b>まで考えてもらいたいです。</p>
+
+    <ol class="steps">
+      <li><b>数字の確認</b><span>8月の授業参加率と月報提出率</span></li>
+      <li><b>案を作る</b><span>その数字をどう見たか、今月やることを1〜2個</span></li>
+      <li><b>9/14（月）までに、はなへLINE</b><span>下の5つを書いて送ってください</span></li>
+      <li><b>まとめて講師会議で共有</b><span>9/16。決まったことをその場で共有します</span></li>
+    </ol>
+
+    <div class="hl orange" style="margin:26px 0 0">
+      <p class="big">LINEで送る5つ</p>
+      <p class="sm">① 8月の数字　② その数字をどう見たか　③ 10月にやること1〜2個<br>④ 何がどうなったら成功か　⑤ はなに頼みたいこと</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>4. 10月にやること</h2>
+    <div class="rule"></div>
+
+    <div class="tasks o">
+      <span class="who otoyo">おとよ</span>
+      <ul>
+        <li><b>4期生企画</b><span>4期生部屋を盛り上げられるようなZoomを行う</span></li>
+        <li><b>売上別部屋へ「今週の1本」（毎週月曜）</b><span>10〜20万／20〜30万 の部屋へ。その層に合う動画を1本だけ。最後に「見たら👀を押してください」と書きます</span></li>
+        <li><b>月末に月報会（30分）</b><span>10〜30万円の層向け。その場で月報を書いて、そのまま投稿して帰ってもらう回です</span></li>
+      </ul>
+    </div>
+
+    <div class="tasks s">
+      <span class="who shiho">しほ</span>
+      <ul>
+        <li><b>2・3期生と、その都度企画を決めて話したり相談したりする</b><span>おとよさんと同じ形で</span></li>
+        <li><b>売上別部屋へ「今週の1本」（毎週月曜）</b><span>0〜5万／5〜10万 の部屋へ</span></li>
+        <li><b>月末に月報会（30分）</b><span>0〜10万円の層向け</span></li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <p>これまでの授業・添削会・ラジオ・ノウハウ部屋の投稿・月報促しは、<b>いままでどおり続けてください。</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>5. 報酬</h2>
+    <div class="rule"></div>
+
+    <div class="hl green">
+      <p class="big">💰 これまでどおり 収益の10% です</p>
+      <p class="sm">これまで運営費となっていたところを、少し明確化しました。<br>これまで以上に退会率を下げてもらうためです。</p>
+    </div>
+
+    <h3>何に対する報酬か、整理しました</h3>
+    <p>金額は月によって変わるので、割合で出しています。全部足すと10%になります。</p>
+
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>仕事</th><th class="num">割合</th></tr></thead>
+        <tbody>
+          <tr><th>Zoom授業／Zoom添削会<span class="sub">企画の会・UTAGE教材1本も同じ</span></th><td class="num">0.80%<span class="sub">1回・1本</span></td></tr>
+          <tr><th>生徒限定アカウントの強化</th><td class="num">1.08%<span class="sub">月</span></td></tr>
+          <tr><th>その月の企画<span class="sub">オフ会準備・3か月企画など</span></th><td class="num">1.08%<span class="sub">月</span></td></tr>
+          <tr><th>施策を考えて実行する</th><td class="num">0.45%<span class="sub">月</span></td></tr>
+          <tr><th>KPIの報告</th><td class="num">0.40%<span class="sub">月</span></td></tr>
+          <tr><th>月報会</th><td class="num">0.28%<span class="sub">1回</span></td></tr>
+          <tr><th>講師会議</th><td class="num">0.17%<span class="sub">1回</span></td></tr>
+          <tr><th>ラジオ／ノウハウ部屋の投稿<span class="sub">今週の1本・月報促しなどの全体投稿も同じ</span></th><td class="num">0.14%<span class="sub">1本・1回</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>9月・10月でいちばん大事なこと</h2>
+    <div class="rule"></div>
+
+    <div class="hl red">
+      <p class="big">10月末に、4期生124名の3か月が切れます</p>
+      <p class="sm">退会の理由でいちばん多いのは「時間がない」「活用できていない」。<br><b>どちらも、こちらから動けば拾えるものです。</b></p>
+    </div>
+
+    <p><b>新しい人を集めることと、サロンを大きくすることは、私が引き受けます。</b></p>
+
+    <p>お二人にお願いしたいのは、<b>いま居てくれる人が辞めない仕組みを作ること</b>です。入る人を増やすより、辞める人を減らすほうが、サロンは強くなります。</p>
+
+    <p style="margin-bottom:0">期生の企画も、今週の1本も、月報会も、全部ここに向けた打ち手です。9月・10月はここを一緒に越えたいと思っています。</p>
+  </div>
+
+  <footer>
+    2026年8月／9月からの運営について<br>
+    分からないところ、やりにくいところがあれば、9/14のLINEのときに一緒に書いてください。
+  </footer>
+
+</div>
+</body>
+</html>

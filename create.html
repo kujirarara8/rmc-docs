@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>クリエイトの告知</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+
+<style>
+  :root {
+    --page:      #F5F6F8;
+    --card:      #FFFFFF;
+    --ink:       #1E2A44;
+    --body:      #3D4A63;
+    --soft:      #77839B;
+    --line:      #E4E8EF;
+    --line-soft: #EEF1F5;
+
+    --blue:      #3B5FCC;
+    --blue-bg:   #EBF0FD;
+    --orange:    #E07C0C;
+    --orange-bg: #FDF1E2;
+    --green:     #2E8B57;
+    --green-bg:  #E9F6EE;
+    --red:       #C0392B;
+    --red-bg:    #FCEEEC;
+
+    --hana:   #C0392B; --hana-bg:   #FCEEEC;
+    --shiho:  #3B5FCC; --shiho-bg:  #EBF0FD;
+    --otoyo:  #2E8B57; --otoyo-bg:  #E9F6EE;
+
+    --shadow: 0 1px 3px rgba(30,42,68,.06), 0 8px 24px -10px rgba(30,42,68,.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page:#12151C; --card:#1C212B; --ink:#EDF0F6; --body:#C0C8D6; --soft:#8B95A8;
+      --line:#2E3542; --line-soft:#262C37;
+      --blue:#8AA6F0;   --blue-bg:#1E2740;
+      --orange:#F0A951; --orange-bg:#33261A;
+      --green:#79C89A;  --green-bg:#1B2E23;
+      --red:#EE8A7C;    --red-bg:#33201E;
+      --hana:#EE8A7C;   --hana-bg:#33201E;
+      --shiho:#8AA6F0;  --shiho-bg:#1E2740;
+      --otoyo:#79C89A;  --otoyo-bg:#1B2E23;
+      --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px -10px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --page:#12151C; --card:#1C212B; --ink:#EDF0F6; --body:#C0C8D6; --soft:#8B95A8;
+    --line:#2E3542; --line-soft:#262C37;
+    --blue:#8AA6F0;   --blue-bg:#1E2740;
+    --orange:#F0A951; --orange-bg:#33261A;
+    --green:#79C89A;  --green-bg:#1B2E23;
+    --red:#EE8A7C;    --red-bg:#33201E;
+    --hana:#EE8A7C;   --hana-bg:#33201E;
+    --shiho:#8AA6F0;  --shiho-bg:#1E2740;
+    --otoyo:#79C89A;  --otoyo-bg:#1B2E23;
+    --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px -10px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0; background: var(--page); color: var(--body);
+    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+    font-size: 17px; line-height: 1.95; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  .hero {
+    background: linear-gradient(115deg, #5B62C9 0%, #8B57C0 100%);
+    border-radius: 18px; padding: 46px 28px 40px; text-align: center; margin-bottom: 22px;
+  }
+  .hero .eyebrow {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 13px; font-weight: 500; letter-spacing: .22em;
+    color: rgba(255,255,255,.82); margin: 0 0 14px;
+  }
+  .hero h1 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(26px, 5.6vw, 38px);
+    color: #fff; margin: 0 0 14px; line-height: 1.35; letter-spacing: -.01em;
+  }
+  .hero p { font-size: 15px; color: rgba(255,255,255,.9); margin: 0; line-height: 1.8; }
+
+  .card {
+    background: var(--card); border-radius: 18px;
+    padding: 34px 30px; margin-bottom: 22px; box-shadow: var(--shadow);
+  }
+  h2 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(21px, 4.2vw, 26px);
+    color: var(--ink); margin: 0 0 8px; line-height: 1.4;
+  }
+  .rule { height: 3px; background: var(--blue); border-radius: 2px; margin: 0 0 26px; }
+  h3 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 18px; color: var(--ink);
+    margin: 30px 0 12px; line-height: 1.5;
+  }
+  h3:first-child { margin-top: 0; }
+  p { margin: 0 0 16px; }
+  p:last-child { margin-bottom: 0; }
+  b, strong { font-weight: 700; color: var(--ink); }
+
+  .hl { border-radius: 12px; padding: 26px 24px; text-align: center; margin: 0 0 22px; }
+  .hl.orange { background: var(--orange-bg); }
+  .hl.green  { background: var(--green-bg); }
+  .hl.blue   { background: var(--blue-bg); }
+  .hl .big {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(19px, 4vw, 25px); line-height: 1.5; margin: 0;
+  }
+  .hl .big + .sm { margin-top: 10px; }
+  .hl.orange .big { color: var(--orange); }
+  .hl.green .big  { color: var(--green); }
+  .hl.blue .big   { color: var(--blue); }
+  .hl .sm { font-size: 14.5px; color: var(--body); margin: 0; line-height: 1.85; }
+
+  .label {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 15px; color: var(--ink); margin: 0 0 12px;
+  }
+
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }
+  .box { border: 2px solid var(--line); border-radius: 12px; padding: 22px 18px; text-align: center; }
+  .box.o { border-color: var(--orange); background: var(--orange-bg); }
+  .box.b { border-color: var(--blue);   background: var(--blue-bg); }
+  .box.g { border-color: var(--green);  background: var(--green-bg); }
+  .box.r { border-color: var(--red);    background: var(--red-bg); }
+  .box .t {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: 19px; color: var(--ink); margin: 0 0 8px;
+  }
+  .box .d { font-size: 14.5px; color: var(--body); margin: 0; line-height: 1.8; }
+
+  .box .cap {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 13.5px; letter-spacing: .06em;
+    color: var(--soft); margin: 0 0 6px;
+  }
+  .box .date {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: clamp(34px, 8vw, 44px);
+    line-height: 1.1; margin: 0 0 6px; font-variant-numeric: tabular-nums;
+  }
+  .box.b .date { color: var(--blue); }
+  .box.r .date { color: var(--red); }
+
+  .tscroll { overflow-x: auto; margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; min-width: 460px; }
+  th, td {
+    text-align: left; padding: 15px 16px;
+    border-bottom: 1px solid var(--line-soft); font-size: 15.5px;
+    vertical-align: middle; color: var(--body);
+  }
+  thead th {
+    background: var(--page); color: var(--soft);
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 14px; white-space: nowrap;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody th { font-weight: 700; color: var(--ink); white-space: nowrap; vertical-align: middle; font-variant-numeric: tabular-nums; }
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+  .sub { display: block; font-size: 13.5px; color: var(--soft); margin-top: 4px; line-height: 1.7; font-weight: 400; }
+
+  .who {
+    display: inline-block;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 14px;
+    padding: 4px 14px; border-radius: 999px; white-space: nowrap;
+  }
+  .who.hana  { background: var(--hana-bg);  color: var(--hana); }
+  .who.shiho { background: var(--shiho-bg); color: var(--shiho); }
+  .who.otoyo { background: var(--otoyo-bg); color: var(--otoyo); }
+
+  .prep { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+  .prep .item { background: var(--green-bg); border-radius: 12px; padding: 22px 18px; }
+  .prep .item b {
+    display: block; font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700; font-size: 16px; color: var(--ink); margin-bottom: 6px; line-height: 1.5;
+  }
+  .prep .item span { font-size: 14px; color: var(--body); line-height: 1.75; }
+
+  .contact { display: flex; flex-direction: column; gap: 12px; }
+  .contact .row {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    background: var(--page); border-radius: 12px; padding: 18px 20px;
+  }
+  .contact .row .k { font-size: 15px; color: var(--body); flex: 1; min-width: 150px; }
+  .contact .row .v {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900; font-size: 18px; color: var(--ink);
+  }
+
+  .note { background: var(--page); border-radius: 12px; padding: 22px; margin-top: 22px; }
+  .note p { font-size: 15px; color: var(--body); margin: 0; }
+
+  footer {
+    text-align: center; font-size: 14px; color: var(--soft);
+    padding: 10px 20px 0; line-height: 1.9;
+  }
+
+  @media (max-width: 640px) {
+    .duo, .prep { grid-template-columns: 1fr; }
+    .card { padding: 26px 20px; }
+    .hero { padding: 36px 20px 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">FOR RMC TEACHERS</p>
+    <h1>RMCクリエイトが<br>始まります</h1>
+    <p>9月・10月の授業の最後に、5分だけ告知にお時間ください</p>
+  </div>
+
+  <div class="card">
+    <h2>RMCクリエイトとは</h2>
+    <div class="rule"></div>
+
+    <div class="hl orange">
+      <p class="big">ハンドメイド作家の「作る」を<br>学べる月額プラットフォーム</p>
+    </div>
+
+    <p class="label">立ち位置</p>
+    <div class="duo">
+      <div class="box">
+        <p class="t">minne・Creema</p>
+        <p class="d">売る場所</p>
+      </div>
+      <div class="box o">
+        <p class="t">RMCクリエイト</p>
+        <p class="d">作り方を教える／学ぶ場所</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>受講生は月額500円で登録し、講師ごとの有料コースを買います。コースの本数も価格も、講師が自由に決められます。</p>
+    </div>
+
+    <div class="hl green" style="margin: 22px 0 0">
+      <p class="big">有料コース売上の90%が<br>クリエイト講師の収益になります</p>
+      <p class="sm">運営手数料は10%だけ。クリエイト講師の拘束時間を最小にする設計です。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>公開の日程</h2>
+    <div class="rule"></div>
+
+    <div class="duo">
+      <div class="box b">
+        <p class="cap">内部公開</p>
+        <p class="date">10/1</p>
+        <p class="d">水曜<br>RMCマーケ会員向け</p>
+      </div>
+      <div class="box r">
+        <p class="cap">一般公開</p>
+        <p class="date">11/15</p>
+        <p class="d">土曜<br>どなたでも</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>お願いしたいこと</h2>
+    <div class="rule"></div>
+
+    <div class="hl blue">
+      <p class="big">授業・添削会の最後に、<br>5分だけ告知をしてください</p>
+      <p class="sm">お一人あたり、9月に3回ほどです</p>
+    </div>
+
+    <p><b>内容を考える必要はありません。</b>台本もスライドもこちらで用意します。読み上げるだけで大丈夫です。</p>
+
+    <p class="label">はなが用意するもの</p>
+    <div class="prep">
+      <div class="item">
+        <b>告知の台本</b>
+        <span>各回分。そのまま読める形で</span>
+      </div>
+      <div class="item">
+        <b>画面共有スライド</b>
+        <span>1〜2枚</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <p><b>各授業の3〜5日前までにお渡しします。</b>直前に慌てることのないようにします。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>9月の日程と、話す内容</h2>
+    <div class="rule"></div>
+
+    <div class="tscroll">
+      <table>
+        <thead>
+          <tr><th>日程</th><th>担当</th><th>授業・添削会</th><th>話す内容</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>9/2 <span class="sub">水 22:00</span></th>
+            <td><span class="who hana">はな</span></td>
+            <td>授業<span class="sub">メラビアンの法則</span></td>
+            <td>はじめての予告</td>
+          </tr>
+          <tr>
+            <th>9/5 <span class="sub">土 10:00</span></th>
+            <td><span class="who shiho">しほ</span></td>
+            <td>アカウント添削会</td>
+            <td>どんなものか案内</td>
+          </tr>
+          <tr>
+            <th>9/9 <span class="sub">水 22:00</span></th>
+            <td><span class="who otoyo">おとよ</span></td>
+            <td>アカウント添削会</td>
+            <td>どんなものか案内</td>
+          </tr>
+          <tr>
+            <th>9/11 <span class="sub">金 22:00</span></th>
+            <td><span class="who shiho">しほ</span></td>
+            <td>授業</td>
+            <td>ひとこと告知</td>
+          </tr>
+          <tr>
+            <th>9/13 <span class="sub">日 10:00</span></th>
+            <td><span class="who hana">はな</span></td>
+            <td>リール添削会</td>
+            <td>くわしい案内</td>
+          </tr>
+          <tr>
+            <th>9/17 <span class="sub">木 10:00</span></th>
+            <td><span class="who otoyo">おとよ</span></td>
+            <td>授業<span class="sub">軸を整える</span></td>
+            <td>くわしい案内</td>
+          </tr>
+          <tr>
+            <th>9/23 <span class="sub">水 22:00</span></th>
+            <td><span class="who hana">はな</span></td>
+            <td>特別授業<span class="sub">negne みなみさん</span></td>
+            <td>最後にはなから案内</td>
+          </tr>
+          <tr>
+            <th>9/24 <span class="sub">木 22:00</span></th>
+            <td><span class="who shiho">しほ</span></td>
+            <td>売上別添削会</td>
+            <td>1週間後に公開、と伝える</td>
+          </tr>
+          <tr>
+            <th>9/25 <span class="sub">金 22:00</span></th>
+            <td><span class="who otoyo">おとよ</span></td>
+            <td>売上別添削会</td>
+            <td>1週間後に公開、と伝える</td>
+          </tr>
+          <tr>
+            <th>9/29 <span class="sub">火 22:00</span></th>
+            <td><span class="who hana">はな</span></td>
+            <td>売上別添削会</td>
+            <td>直前の最終告知</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <p>10月も同じように、授業の最後に告知をお願いします。日程は10月の頭にあらためて共有します。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>質問はこちらへ</h2>
+    <div class="rule"></div>
+
+    <div class="contact">
+      <div class="row">
+        <span class="k">事業の内容・運営のこと</span>
+        <span class="v">はな</span>
+      </div>
+      <div class="row">
+        <span class="k">システムのこと（サイトの動作など）</span>
+        <span class="v">史也</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    RMCクリエイト 告知のお願い ／ 2026年8月<br>
+    内容は状況に応じて変わることがあります
+  </footer>
+
+</div>
+</body>
+</html>
