@@ -1,0 +1,252 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RMCクリエイト スケジュールとルール</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f4f7;color:#222;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.8}
+header{background:linear-gradient(135deg,#6a4cd8,#9b5de5);color:#fff;padding:36px 20px}header h1{margin:0 auto;max-width:900px;font-size:26px}header p{margin:8px auto 0;max-width:900px;opacity:.9}
+nav{max-width:900px;margin:0 auto;padding:16px 20px 0;display:flex;flex-wrap:wrap;gap:8px}nav a{background:#fff;border-radius:999px;padding:4px 14px;font-size:14px;font-weight:700;text-decoration:none;color:#6a4cd8;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+main{max-width:900px;margin:0 auto;padding:4px 20px 40px}
+.sec{margin:34px 0 4px;font-size:22px;color:#6a4cd8;display:flex;align-items:center;gap:8px}
+.card{background:#fff;border-radius:14px;padding:22px 24px;margin:18px 0;box-shadow:0 2px 8px rgba(0,0,0,.06);border-top:5px solid #3b82f6}
+.card.red{border-top-color:#e5484d}.card.purple{border-top-color:#8b5cf6}.card.orange{border-top-color:#f59e0b}.card.green{border-top-color:#22a06b}
+.card h2{margin:0 0 16px;font-size:20px;padding-bottom:8px;border-bottom:4px solid #3b82f6;display:flex;align-items:center;gap:10px}
+.red h2{border-color:#e5484d}.purple h2{border-color:#8b5cf6}.orange h2{border-color:#f59e0b}.green h2{border-color:#22a06b}
+.ic{flex:none;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#e8f0fe;color:#3b82f6}
+.red .ic{background:#fde8e8;color:#e5484d}.purple .ic{background:#f1ecff;color:#8b5cf6}.orange .ic{background:#fff4d6;color:#d97706}.green .ic{background:#e7f6ee;color:#22a06b}
+.ic svg{width:20px;height:20px}
+ul{margin:0;padding-left:1.2em}li{margin:4px 0}
+.note{font-size:13px;color:#666;margin:12px 0 0}
+.tag{display:inline-block;background:#fff4d6;color:#a15c00;border-radius:6px;padding:0 8px;font-size:13px;font-weight:700}
+b.hl{color:#e5484d}
+/* timeline */
+.gantt{width:100%;overflow-x:auto}.gantt svg{min-width:640px;width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;margin-top:8px}.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+/* steps */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:6px}
+.fs{background:#f7f8fb;border-radius:12px;padding:12px 10px;text-align:center;position:relative;font-size:14px}
+.fs .d{display:block;font-weight:700;color:#3b82f6;font-size:13px}.fs.goal{background:#fde8e8}.fs.goal .d{color:#e5484d}
+.fs svg{width:34px;height:34px;color:#3b82f6;margin:2px auto 4px;display:block}.fs.goal svg{color:#e5484d}
+@media(max-width:820px){.flow{grid-template-columns:1fr}.fs{display:flex;align-items:center;gap:10px;text-align:left}.fs svg{margin:0}}
+/* tables */
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:15px}th,td{border:1px solid #e5e7eb;padding:9px 10px;text-align:left;vertical-align:top}thead th{background:#f1ecff;color:#4c35a8}tbody th{background:#fafafa;white-space:nowrap}
+td.c{text-align:center;font-weight:700}
+.ok{color:#16794c;font-weight:700}.ng{color:#e5484d;font-weight:700}
+/* price */
+.price{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:6px 0 14px}
+.pbox{border:2px solid #8b5cf6;border-radius:14px;padding:12px 18px;text-align:center;min-width:200px}.pbox .y{font-size:26px;font-weight:700;color:#8b5cf6}.pbox small{display:block;font-size:13px;color:#555}
+.plus{font-size:28px;font-weight:700;color:#8b5cf6}
+/* money */
+.money{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center}
+@media(max-width:640px){.money{grid-template-columns:1fr;justify-items:center}}
+.ref{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:16px 0 4px}
+.rs{background:#e8f0fe;border-radius:10px;padding:8px 12px;font-size:14px;text-align:center;flex:1;min-width:110px}.rs.end{background:#fde8e8;font-weight:700;color:#e5484d}
+.arr{color:#999;font-weight:700}
+/* grid cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.gc{background:#f7f5ff;border-radius:12px;padding:14px 12px;font-size:14px;text-align:center}.gc svg{width:38px;height:38px;color:#8b5cf6;display:block;margin:0 auto 6px}
+/* contact */
+.ch{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:4px 0 10px}
+.cb{background:#fde8e8;border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;color:#b42328;display:flex;align-items:center;gap:6px}.cb svg{width:20px;height:20px}
+.center{text-align:center}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8M12 8v13M12 8S10 3 7.5 4.5 9 8 12 8zM12 8s2-5 4.5-3.5S15 8 12 8z"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+<symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+<symbol id="i-yen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l6 8 6-8M12 11v10M7 13h10M7 17h10"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+<symbol id="i-cam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l2-3h4l2 3"/></symbol>
+<symbol id="i-tools" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5L20 18M8 16.5L20 6"/></symbol>
+<symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></symbol>
+<symbol id="i-thread" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h10"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></symbol>
+<symbol id="i-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+<symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h4l7 5V5L7 10zM18 9a4 4 0 0 1 0 6"/></symbol>
+<symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></symbol>
+</defs></svg>
+
+<header><h1>RMCクリエイト スケジュールとルール</h1><p>講師のみなさん向け ／ 2026年10月29日時点</p></header>
+<nav><a href="#schedule">スケジュール</a><a href="#about">クリエイトとは</a><a href="#teacher">講師のルール</a><a href="#money">お金</a><a href="#kit">キット</a><a href="#quality">講座の質</a><a href="#contact">窓口</a></nav>
+<main>
+
+<h2 class="sec" id="schedule">スケジュール</h2>
+
+<div class="card"><h2><span class="ic"><svg><use href="#i-cal"/></svg></span>10月〜12月の全体の流れ</h2>
+<div class="gantt"><svg viewBox="0 0 820 250" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, Meiryo, sans-serif" font-size="13">
+<!-- month heads: x 150..810 ; 10/1=150, 11/1=360(31d), 12/1=563(30d), 12/31=766 ; ~6.77px/day -->
+<rect x="150" y="10" width="210" height="26" fill="#f1ecff"/><rect x="360" y="10" width="203" height="26" fill="#e8f0fe"/><rect x="563" y="10" width="210" height="26" fill="#e7f6ee"/>
+<text x="255" y="28" text-anchor="middle" font-weight="700" fill="#4c35a8">10月</text><text x="461" y="28" text-anchor="middle" font-weight="700" fill="#1d4ed8">11月</text><text x="668" y="28" text-anchor="middle" font-weight="700" fill="#16794c">12月</text>
+<g stroke="#eee"><line x1="360" y1="36" x2="360" y2="240"/><line x1="563" y1="36" x2="563" y2="240"/></g>
+<!-- 11/20 line -->
+<line x1="489" y1="36" x2="489" y2="240" stroke="#e5484d" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="489" y="248" text-anchor="middle" font-weight="700" fill="#e5484d">11/20 一般公開</text>
+<!-- row: site -->
+<text x="8" y="66" font-weight="700">サイト</text>
+<rect x="150" y="52" width="210" height="22" rx="6" fill="#8b5cf6"/><text x="255" y="67" text-anchor="middle" fill="#fff">RMC生に無料開放</text>
+<rect x="360" y="52" width="129" height="22" rx="6" fill="#9ca3af"/><text x="424" y="67" text-anchor="middle" fill="#fff">一旦閉じる</text>
+<rect x="489" y="52" width="284" height="22" rx="6" fill="#e5484d"/><text x="631" y="67" text-anchor="middle" fill="#fff">一般公開（月額500円スタート）</text>
+<!-- row: 9月末組 -->
+<text x="8" y="106" font-weight="700">9月末までの講師</text>
+<rect x="312" y="92" width="48" height="22" rx="6" fill="#3b82f6"/><text x="336" y="107" text-anchor="middle" fill="#fff" font-size="11">FB</text>
+<rect x="360" y="92" width="27" height="22" rx="6" fill="#60a5fa"/><text x="373" y="107" text-anchor="middle" fill="#fff" font-size="11">修正</text>
+<rect x="387" y="92" width="34" height="22" rx="6" fill="#93c5fd"/><text x="404" y="107" text-anchor="middle" fill="#1e3a8a" font-size="11">登録</text>
+<circle cx="489" cy="103" r="9" fill="#e5484d"/><text x="503" y="108" fill="#e5484d" font-weight="700">公開</text>
+<!-- row: 10月以降組 -->
+<text x="8" y="146" font-weight="700">10月以降の講師</text>
+<rect x="461" y="132" width="28" height="22" rx="6" fill="#3b82f6"/><text x="475" y="147" text-anchor="middle" fill="#fff" font-size="11">FB</text>
+<rect x="489" y="132" width="34" height="22" rx="6" fill="#60a5fa"/><text x="506" y="147" text-anchor="middle" fill="#fff" font-size="11">修正</text>
+<rect x="523" y="132" width="40" height="22" rx="6" fill="#93c5fd"/><text x="543" y="147" text-anchor="middle" fill="#1e3a8a" font-size="11">登録</text>
+<circle cx="584" cy="143" r="9" fill="#22a06b"/><circle cx="631" cy="143" r="9" fill="none" stroke="#22a06b" stroke-width="2"/><text x="645" y="148" fill="#16794c" font-weight="700">お披露目</text>
+<!-- row: kit -->
+<text x="8" y="186" font-weight="700">キット</text>
+<rect x="360" y="172" width="61" height="22" rx="6" fill="#f59e0b"/><text x="390" y="187" text-anchor="middle" fill="#fff" font-size="11">内容決め</text>
+<rect x="489" y="172" width="284" height="22" rx="6" fill="#fcd34d"/><text x="631" y="187" text-anchor="middle" fill="#7c4a03">販売スタート</text>
+<!-- row: MT -->
+<text x="8" y="226" font-weight="700">講師MT・授業</text>
+<g fill="#8b5cf6"><circle cx="360" cy="220" r="7"/><circle cx="563" cy="220" r="7"/></g>
+<text x="372" y="225" fill="#6a4cd8" font-size="12">毎月1日</text><text x="575" y="225" fill="#6a4cd8" font-size="12">毎月1日</text>
+</svg></div>
+<div class="legend"><span style="--c:#3b82f6">はなからのフィードバック</span><span style="--c:#60a5fa">修正版の提出</span><span style="--c:#93c5fd">プラットフォーム登録</span><span style="--c:#22a06b">ニュークリエイターイベント（12/4か12/11）</span></div>
+<p class="note">横にスクロールできます。</p></div>
+
+<div class="card"><h2><span class="ic"><svg><use href="#i-up"/></svg></span>11/20 公開までの5ステップ</h2>
+<div class="flow">
+<div class="fs"><svg><use href="#i-gift"/></svg><div><span class="d">10/31まで</span>RMC生に無料開放</div></div>
+<div class="fs"><svg><use href="#i-lock"/></svg><div><span class="d">11/1〜11/20</span>サイトを一旦閉じて修正</div></div>
+<div class="fs"><svg><use href="#i-box"/></svg><div><span class="d">11/10頃まで</span>キットの中身・値段を決める</div></div>
+<div class="fs"><svg><use href="#i-text"/></svg><div><span class="d">11/10〜11/20</span>プラットフォームへ登録</div></div>
+<div class="fs goal"><svg><use href="#i-star"/></svg><div><span class="d">11/20（金）</span>一般公開＋公開記念ライブ</div></div>
+</div>
+<p class="note">11/1〜11/20は、RMC生も見られなくなります。講座の内容を変えたい人は、この期間に相談してください。</p></div>
+
+<div class="card orange"><h2><span class="ic"><svg><use href="#i-cal"/></svg></span>講師の制作スケジュール</h2><div class="tbl"><table>
+<thead><tr><th></th><th>9月末までに講師になった人</th><th>10月以降に講師になった人</th></tr></thead>
+<tbody>
+<tr><th>提出</th><td class="c">10/25</td><td class="c">11/15</td></tr>
+<tr><th>フィードバック</th><td class="c">10/31まで</td><td class="c">11/16〜11/20</td></tr>
+<tr><th>修正版の提出</th><td class="c">11/5</td><td class="c">11/25</td></tr>
+<tr><th>登録・完成</th><td class="c">11/10</td><td class="c">11月末</td></tr>
+<tr><th>お披露目</th><td class="c"><b class="hl">11/20 一般公開</b></td><td class="c"><b class="hl">12月のイベント</b></td></tr>
+</tbody></table></div></div>
+
+<div class="card green"><h2><span class="ic"><svg><use href="#i-cal"/></svg></span>公開したあと</h2><div class="tbl"><table>
+<thead><tr><th>いつ</th><th>何がある</th></tr></thead>
+<tbody>
+<tr><th>12/4（金）か12/11（金）</th><td>ニュークリエイターイベント（新しい講師と講座のお披露目）。日程は決まったら連絡します</td></tr>
+<tr><th>3か月に1回ほど</th><td>新しい講師の追加とお披露目</td></tr>
+<tr><th>毎月1日</th><td>講師ミーティング＋授業（次回は11/1。1月は日付をずらします）</td></tr>
+<tr><th>毎週月曜</th><td>Discordで講師への全体連絡</td></tr>
+<tr><th>11月から</th><td>講師インタビューなどの読み物</td></tr>
+</tbody></table></div></div>
+
+<h2 class="sec" id="about">ルール</h2>
+
+<div class="card purple"><h2><span class="ic"><svg><use href="#i-hand"/></svg></span>クリエイトとは</h2>
+<div class="tbl"><table>
+<thead><tr><th></th><th>RMCマーケティング</th><th>RMCクリエイト</th></tr></thead>
+<tbody>
+<tr><th>学べること</th><td>売り方</td><td><b class="hl">作り方</b></td></tr>
+<tr><th>形</th><td>コミュニティ（サロン）</td><td>minne・Creemaのようなプラットフォーム（教える人と学ぶ人がいる）</td></tr>
+<tr><th>来てほしい人</th><td>ハンドメイドを売りたい人</td><td>まだハンドメイドをやっていない人／2店舗目・新しいジャンルに挑戦したい作家さん</td></tr>
+</tbody></table></div>
+<p style="margin:18px 0 6px;font-weight:700">受講者の料金</p>
+<div class="price">
+<div class="pbox"><span class="y">月額500円</span><small>全講師の基礎レッスンが見放題</small></div>
+<span class="plus">＋</span>
+<div class="pbox"><span class="y">有料講座</span><small>講師ごとの講座を買い切り（値段は講師が決める）</small></div>
+</div>
+<ul><li>有料講座は月額会員だけが買えます（クレジットカード払い）</li><li>解約したあとも、買った講座は見られます</li><li>外向けには「RMCの作家が教える」とは出しません</li></ul></div>
+
+<div class="card red" id="teacher"><h2><span class="ic"><svg><use href="#i-user"/></svg></span>講師のルール</h2><div class="tbl"><table>
+<thead><tr><th>項目</th><th>ルール</th></tr></thead>
+<tbody>
+<tr><th>なれる人</th><td>RMC生の手挙げ制</td></tr>
+<tr><th>RMCを退会したら</th><td><b class="hl">講師もできなくなります</b></td></tr>
+<tr><th>ノルマ・義務</th><td><span class="ok">なし</span>。自分のペースで進めてOK</td></tr>
+<tr><th>辞めたいとき</th><td>いつ辞めても大丈夫（契約期間の縛りなし）</td></tr>
+<tr><th>講座の値段・本数</th><td>講師が決める</td></tr>
+</tbody></table></div></div>
+
+<div class="card" id="money"><h2><span class="ic"><svg><use href="#i-yen"/></svg></span>お金のこと</h2>
+<div class="money">
+<svg viewBox="0 0 200 200" width="190" height="190" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, Meiryo, sans-serif">
+<circle cx="100" cy="100" r="70" fill="none" stroke="#3b82f6" stroke-width="34" stroke-dasharray="395.8 439.8" transform="rotate(-90 100 100)"/>
+<circle cx="100" cy="100" r="70" fill="none" stroke="#d1d5db" stroke-width="34" stroke-dasharray="44 439.8" stroke-dashoffset="-395.8" transform="rotate(-90 100 100)"/>
+<text x="100" y="98" text-anchor="middle" font-size="30" font-weight="700" fill="#1d4ed8">90%</text>
+<text x="100" y="120" text-anchor="middle" font-size="13" fill="#555">講師の収益</text>
+</svg>
+<div><ul>
+<li>有料講座の売上の<b class="hl">90%</b>が講師の収益</li>
+<li>運営手数料は10%（別にStripeの決済手数料が引かれます）</li>
+<li>精算は<b>月末締め・翌月25日</b>の支払い予定</li></ul></div>
+</div>
+<p style="margin:20px 0 0;font-weight:700">紹介料（RMCへの紹介）</p>
+<div class="ref">
+<div class="rs">講師の<br>専用リンク</div><span class="arr">→</span>
+<div class="rs">RMCに<br>入会</div><span class="arr">→</span>
+<div class="rs">3か月<br>続く</div><span class="arr">→</span>
+<div class="rs end">1人につき<br>1万円</div>
+</div>
+<p class="note">詳しい仕組みは、後日資料でお送りします。</p></div>
+
+<div class="card green"><h2><span class="ic"><svg><use href="#i-gift"/></svg></span>講師特典</h2>
+<div class="grid">
+<div class="gc"><svg><use href="#i-zoom"/></svg><b>特別授業・ミーティング</b><br>月1〜2回</div>
+<div class="gc"><svg><use href="#i-star"/></svg><b>表彰</b><br>オフ会・RMCの表彰会で、活躍した講師を表彰</div>
+<div class="gc"><svg><use href="#i-heart"/></svg><b>専用スペース</b><br>クリエイト専用のバーチャルスペースなど</div>
+</div></div>
+
+<div class="card orange" id="kit"><h2><span class="ic"><svg><use href="#i-box"/></svg></span>キット販売</h2><div class="tbl"><table>
+<thead><tr><th>項目</th><th>ルール</th></tr></thead>
+<tbody>
+<tr><th>数</th><td>1講座に1キット</td></tr>
+<tr><th>発送</th><td>講師が行う</td></tr>
+<tr><th>買える人</th><td>月額会員だけ</td></tr>
+<tr><th>手数料</th><td>商品代＋送料の10%（別にStripeの決済手数料）</td></tr>
+<tr><th>いつから</th><td>11/20の公開に合わせて使えるように準備中</td></tr>
+</tbody></table></div></div>
+
+<div class="card purple" id="quality"><h2><span class="ic"><svg><use href="#i-cam"/></svg></span>講座の質を上げるポイント</h2>
+<div class="grid">
+<div class="gc"><svg><use href="#i-tools"/></svg>最初に材料・道具を並べて見せる</div>
+<div class="gc"><svg><use href="#i-zoom"/></svg>工程は「寄り」と「引き」の両方で。ゆっくり版・早い版もあると見やすい</div>
+<div class="gc"><svg><use href="#i-thread"/></svg>糸・チャコペンは生地と違う色にする</div>
+<div class="gc"><svg><use href="#i-pause"/></svg>作業は画面の真ん中で。一動作ごとに手を止める</div>
+<div class="gc"><svg><use href="#i-text"/></svg>紹介文は「この動画で〇〇ができるようになる」の形に</div>
+<div class="gc"><svg><use href="#i-star"/></svg>YouTubeとの違い＝現役作家として「自分だから言えること」</div>
+</div>
+<ul style="margin-top:14px"><li>独学でも、実際に商品を販売できていれば教えてOK</li></ul>
+<p class="note"><svg width="14" height="14" style="vertical-align:-2px;color:#22a06b"><use href="#i-check"/></svg> 提出前の見直しチェックリストは、クリエイトのDiscordにあります。</p></div>
+
+<div class="card"><h2><span class="ic"><svg><use href="#i-mega"/></svg></span>集客</h2><div class="tbl"><table>
+<thead><tr><th>誰が</th><th>何をする</th></tr></thead>
+<tbody>
+<tr><th>はな</th><td>インテリアのアカウントで発信／クリエイト専用のInstagramアカウントで講師をピックアップ</td></tr>
+<tr><th>講師のみなさん</th><td>クリエイトの集客用アカウントを立ち上げてもらえるとありがたいです（強制ではありません）</td></tr>
+<tr><th>運営</th><td>集客の1か月分の投稿シートを一緒に作れます</td></tr>
+</tbody></table></div></div>
+
+<div class="card orange"><h2><span class="ic"><svg><use href="#i-gift"/></svg></span>公開記念の特典（受講者向け）</h2>
+<div class="ref">
+<div class="rs">11/20〜11/24に<br>月額会員になる</div><span class="arr">→</span>
+<div class="rs">公式LINEに<br>「登録しました」</div><span class="arr">→</span>
+<div class="rs end">チェックリスト<br>（PDF）</div>
+</div>
+<p class="note">特典の中身：「作ったものを"売れる商品"にするチェックリスト」</p></div>
+
+<div class="card red" id="contact"><h2><span class="ic"><svg><use href="#i-chat"/></svg></span>窓口・連絡</h2>
+<p class="center" style="margin:0 0 10px">提出・質問・相談は、すべて<b class="hl">はな</b>へ</p>
+<div class="ch">
+<div class="cb"><svg><use href="#i-chat"/></svg>Discordでメンション</div>
+<div class="cb"><svg><use href="#i-user"/></svg>DiscordのDM</div>
+<div class="cb"><svg><use href="#i-chat"/></svg>公式LINE</div>
+<div class="cb"><svg><use href="#i-insta"/></svg>InstagramのDM</div>
+</div>
+<p class="center note">どれでもOK。はなが1日1回、すべて確認しています。</p></div>
+
+</main></body></html>
